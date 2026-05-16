@@ -810,6 +810,8 @@
   .jumper .hop {
     position: absolute;
     inset: 0;
+    transform-origin: 50% 95%;
+    animation: page-jump 1.4s ease-in-out infinite;
   }
   .jumper .body-layer,
   .jumper .arm-layer {
@@ -834,7 +836,16 @@
     0%, 100% { transform: rotate(-10deg); }
     50%      { transform: rotate(12deg);  }
   }
-  /* steady shadow under his feet */
+  @keyframes page-jump {
+    0%   { transform: translateY(0)     scaleY(1)    scaleX(1);    }
+    15%  { transform: translateY(6px)   scaleY(0.88) scaleX(1.08); }
+    35%  { transform: translateY(-80px) scaleY(1.08) scaleX(0.94); }
+    55%  { transform: translateY(-80px) scaleY(1.05) scaleX(0.96); }
+    72%  { transform: translateY(4px)   scaleY(0.85) scaleX(1.10); }
+    85%  { transform: translateY(-2px)  scaleY(1.02) scaleX(0.99); }
+    100% { transform: translateY(0)     scaleY(1)    scaleX(1);    }
+  }
+  /* little shadow that pulses */
   .jumper::after {
     content: '';
     position: absolute;
@@ -846,6 +857,14 @@
     background: rgba(0,0,0,0.18);
     border-radius: 50%;
     filter: blur(5px);
+    animation: jumper-shadow 1.4s ease-in-out infinite;
+  }
+  @keyframes jumper-shadow {
+    0%, 100% { width: 90px; opacity: 0.22; }
+    40%      { width: 50px; opacity: 0.1; }
+    60%      { width: 50px; opacity: 0.1; }
+    72%      { width: 105px; opacity: 0.32; }
+    85%      { width: 90px; opacity: 0.22; }
   }
 
   @media (max-width: 500px) {
