@@ -656,15 +656,23 @@
     z-index: 2;
   }
   .marquee-track {
-    display: inline-block; white-space: nowrap;
-    animation: scroll 30s linear infinite;
-    padding-left: 100%;
+    display: inline-flex;
+    white-space: nowrap;
+    animation: scroll 40s linear infinite;
+    /* container holds two side-by-side copies of the content;
+       sliding it left by 50% places the second copy where the first started — seamless loop */
+    will-change: transform;
+  }
+  .marquee-content {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
   }
   .marquee-track span { margin: 0 30px; }
   .marquee-track .dot { color: var(--hot); }
   @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   /* ===== TON LOGO ===== */
@@ -927,7 +935,7 @@
 
   <div class="cta-row">
     <a href="#contract" class="btn primary">BUY $LEZARD 🦎</a>
-    <a href="#" class="btn hot">JOIN TELEGRAM</a>
+    <a href="https://t.me/tonlezard" target="_blank" rel="noopener" class="btn hot">JOIN TELEGRAM</a>
     <a href="https://x.com/tonlezard" target="_blank" rel="noopener" class="btn sky">FOLLOW X</a>
   </div>
 </section>
@@ -935,14 +943,26 @@
 <!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-track">
-    <span>TON LEZARD</span><span class="dot">🦎</span>
-    <span>LE LÉZARD HAS ARRIVED</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
-    <span>JOIN THE COLONY</span><span class="dot">🦎</span>
-    <span>WAVE BACK SER</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
-    <span>LEZARD SZN · LEZARDS UP</span><span class="dot">🦎</span>
-    <span>TON LEZARD</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
-    <span>LE LÉZARD HAS ARRIVED</span><span class="dot">🦎</span>
-    <span>JOIN THE COLONY</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
+    <div class="marquee-content" aria-hidden="false">
+          <span>TON LEZARD</span><span class="dot">🦎</span>
+      <span>LE LÉZARD HAS ARRIVED</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
+      <span>JOIN THE COLONY</span><span class="dot">🦎</span>
+      <span>WAVE BACK SER</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
+      <span>LEZARD SZN · LEZARDS UP</span><span class="dot">🦎</span>
+      <span>TON LEZARD</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
+      <span>LE LÉZARD HAS ARRIVED</span><span class="dot">🦎</span>
+      <span>JOIN THE COLONY</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
+    </div>
+    <div class="marquee-content" aria-hidden="true">
+          <span>TON LEZARD</span><span class="dot">🦎</span>
+      <span>LE LÉZARD HAS ARRIVED</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
+      <span>JOIN THE COLONY</span><span class="dot">🦎</span>
+      <span>WAVE BACK SER</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
+      <span>LEZARD SZN · LEZARDS UP</span><span class="dot">🦎</span>
+      <span>TON LEZARD</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
+      <span>LE LÉZARD HAS ARRIVED</span><span class="dot">🦎</span>
+      <span>JOIN THE COLONY</span><span class="dot"><svg class="ton-logo"><use href="#ton-logo"/></svg></span>
+    </div>
   </div>
 </div>
 
@@ -1049,7 +1069,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="socials">
-    <a href="#" class="social-btn">TELEGRAM 💬</a>
+    <a href="https://t.me/tonlezard" target="_blank" rel="noopener" class="social-btn">TELEGRAM 💬</a>
     <a href="https://x.com/tonlezard" target="_blank" rel="noopener" class="social-btn">X / TWITTER 🐦</a>
     <a href="#" class="social-btn">STICKER PACK 🦎</a>
     <a href="#" class="social-btn">DEXSCREENER 📈</a>
