@@ -810,8 +810,6 @@
   .jumper .hop {
     position: absolute;
     inset: 0;
-    transform-origin: 50% 95%;
-    animation: page-jump 1.4s ease-in-out infinite;
   }
   .jumper .body-layer,
   .jumper .arm-layer {
@@ -845,7 +843,7 @@
     85%  { transform: translateY(-2px)  scaleY(1.02) scaleX(0.99); }
     100% { transform: translateY(0)     scaleY(1)    scaleX(1);    }
   }
-  /* little shadow that pulses */
+  /* steady shadow under his feet */
   .jumper::after {
     content: '';
     position: absolute;
@@ -857,14 +855,6 @@
     background: rgba(0,0,0,0.18);
     border-radius: 50%;
     filter: blur(5px);
-    animation: jumper-shadow 1.4s ease-in-out infinite;
-  }
-  @keyframes jumper-shadow {
-    0%, 100% { width: 90px; opacity: 0.22; }
-    40%      { width: 50px; opacity: 0.1; }
-    60%      { width: 50px; opacity: 0.1; }
-    72%      { width: 105px; opacity: 0.32; }
-    85%      { width: 90px; opacity: 0.22; }
   }
 
   @media (max-width: 500px) {
