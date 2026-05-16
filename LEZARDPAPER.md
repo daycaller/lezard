@@ -94,7 +94,6 @@ That's it. That's the roadmap.
 Things the colony has hinted at wanting:
 
 - A $LEZARD sticker pack with new poses
-- Charity raids to children's hospitals and animal shelters
 - A real-life lezard plushie
 - Eventually: the lezard becomes the official greeter of TON itself
 
