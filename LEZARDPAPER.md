@@ -73,11 +73,10 @@ Four numbers. That's the whole section.
 | **Total supply** | 1,000,000,000 $LEZARD |
 | **Tax (buy / sell)** | 0% / 0% |
 | **Team allocation** | 0% |
-| **LP** | Burned at launch |
 
 That is the entire token economic model. There are no vesting schedules because there is nothing to vest. There are no unlocks because there is nothing locked. There are no insider allocations because there are no insiders. The lezard waves at everyone equally.
 
-**100% community distribution.** Liquidity is added at launch and the LP tokens are sent to a burn address. The contract is renounced. There are no admin keys, no upgrade proxies, no mint functions. The lezard cannot be inflated.
+**100% community distribution.** The contract is renounced. There are no admin keys, no upgrade proxies, no mint functions. The lezard cannot be inflated.
 
 ---
 
